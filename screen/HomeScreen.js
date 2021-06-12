@@ -20,32 +20,21 @@ displayNames= async()=>{
 }
 
 
-updateAttendence(roll_no,status){
-  var id ='';
-  if(roll_no <=9){
-    id = '0' + roll_no;
-  }else{
-    id = roll_no;
-  }
-
-
-  var today = new Date();
-  var dd = today.getDate();
-  var mm = today.getMonth() + 1;
-
-  var yyyy = today.getFullYear();
-  if(dd < 10 ){
-    dd = '0' + dd;
-  }
-  if(mm < 10 ){
-    mm = '0' + mm;
-  }
-  today = dd + '-' + mm + '-' + yyyy;
-  var ref_path = id;
-  var class_ref = db.ref = db.ref(ref_path);
-  class_ref.update({
-    [today]: status,
-  });
+updteAttendance(roll_no, status)
+{ var id=''; if(roll_no<=9)
+{ id='0'+roll_no } 
+else{ id=roll_no } 
+var today=new Date() 
+console.log(today) 
+var dd=today.getDate() 
+var mm=today.getMonth() 
+var yyyy=today.getFullYear() 
+if(dd<10){ dd='0'+dd} if(mm<10)
+{ mm='0'+mm} today =dd +'-'+ mm +'-'+ yyyy 
+var classRef=db.ref(id) 
+classRef.update({ [today]:status }) 
+console.log( "Roll no."+id +" is" +status 
+)
 }
   
 
